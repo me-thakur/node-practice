@@ -1,7 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
-var fs = require('fs');
+const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials') //add partials (files that are common in all web pages eg: header or footer)
@@ -55,6 +56,6 @@ app.get('/bad', (req, res) => { //request handler (handling the GET method from 
   });
 });
 
-app.listen(3000, () => { //listening to port 3000
-  console.log('Server is using port 3000');
+app.listen(port, () => { //listening to port 3000
+  console.log(`Server is using port ${port}`);
 });
