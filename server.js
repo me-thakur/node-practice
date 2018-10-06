@@ -50,6 +50,12 @@ app.get('/about', (req, res) => {
   }); //picking up the about.hbs file
 });
 
+app.get('/projects', (req,res) => {
+  res.render('project.hbs', {
+    pageTitle: 'My Project'
+  });
+});
+
 app.get('/bad', (req, res) => { //request handler (handling the GET method from user) eg: localhost:3000/bad
   res.send({
     errorMessage: 'Cannot complete the request'
